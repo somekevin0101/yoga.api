@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YogaApi", "YogaApi\YogaApi.csproj", "{CBF68E7A-7BBD-46B8-88AA-9C4A064A0484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YogaApi.Core", "YogaApi.Core\YogaApi.Core.csproj", "{55090D4E-2D93-460F-BA87-BE77388D34EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YogaApi.Implementations", "YogaApi.Implementations\YogaApi.Implementations.csproj", "{01F7D4CD-53CB-414C-A0E9-D1DD7C2D8C2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YogaApi.Tests", "YogaApi.Tests\YogaApi.Tests.csproj", "{A38AFB0E-27BB-4415-98C5-70FCDC024CBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBF68E7A-7BBD-46B8-88AA-9C4A064A0484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF68E7A-7BBD-46B8-88AA-9C4A064A0484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF68E7A-7BBD-46B8-88AA-9C4A064A0484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF68E7A-7BBD-46B8-88AA-9C4A064A0484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55090D4E-2D93-460F-BA87-BE77388D34EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55090D4E-2D93-460F-BA87-BE77388D34EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55090D4E-2D93-460F-BA87-BE77388D34EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55090D4E-2D93-460F-BA87-BE77388D34EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01F7D4CD-53CB-414C-A0E9-D1DD7C2D8C2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F7D4CD-53CB-414C-A0E9-D1DD7C2D8C2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F7D4CD-53CB-414C-A0E9-D1DD7C2D8C2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F7D4CD-53CB-414C-A0E9-D1DD7C2D8C2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A38AFB0E-27BB-4415-98C5-70FCDC024CBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38AFB0E-27BB-4415-98C5-70FCDC024CBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38AFB0E-27BB-4415-98C5-70FCDC024CBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38AFB0E-27BB-4415-98C5-70FCDC024CBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70EDB74D-FEFD-49A9-BF9A-F917947A6036}
+	EndGlobalSection
+EndGlobal
