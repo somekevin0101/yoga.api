@@ -11,7 +11,8 @@ namespace YogaApi.Core.Models
         }
 
         public int UserId { get; set; }
-        public string Name { get; set; }
+        public string SequenceName { get; set; }
+        public string SequenceStyle { get; set; }
         public List<PoseOrder> Poses { get; set; }
     }
 }

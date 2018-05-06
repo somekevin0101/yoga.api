@@ -8,7 +8,8 @@ namespace YogaApi.Models
     {
         [Required]
         public int UserId { get; set; }
-        public string Name { get; set; }
+        public string SequenceName { get; set; }
+        public string SequenceStyle { get; set; }
         [Required]
         public List<PoseOrderApiModel> Poses { get; set; }
     }

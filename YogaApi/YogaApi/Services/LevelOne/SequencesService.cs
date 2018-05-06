@@ -20,10 +20,10 @@ namespace YogaApi.Services.LevelOne
             _mapper = mapper;
         }
 
-        public async Task<ApiResponse<string>> SaveSequence(SequencePostModel model)
+        public async Task<ApiResponse<long>> SaveSequence(SequencePostModel model)
         {
-            string sequenceId = await _sequencesRepository.SaveSequence(_mapper.Map<Sequence>(model)).ConfigureAwait(false);
-            return new ApiResponse<string>(sequenceId, HttpStatusCode.OK, true);
+            long sequenceId = await _sequencesRepository.SaveSequence(_mapper.Map<Sequence>(model)).ConfigureAwait(false);
+            return new ApiResponse<long>(sequenceId, HttpStatusCode.OK, true);
         }
     }
 }

@@ -74,7 +74,8 @@ namespace YogaApi.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            kernel.Bind<ISequencesRepository>().To<SequencesRepository>();
+            kernel.Bind<ISequencesRepository>().To<SequencesRepository>()
+                .WithConstructorArgument("connectionString", "Data Source=DESKTOP-BIQSAGN;Initial Catalog=Yoga;Integrated Security=True");
         }        
     }
 }

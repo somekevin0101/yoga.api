@@ -7,6 +7,6 @@ namespace YogaApi.Interfaces
 {
     public interface ISequencesService
     {
-        Task<ApiResponse<string>> SaveSequence(SequencePostModel model);
+        Task<ApiResponse<long>> SaveSequence(SequencePostModel model);
     }
 }

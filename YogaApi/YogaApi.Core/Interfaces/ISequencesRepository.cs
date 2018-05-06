@@ -9,6 +9,6 @@ namespace YogaApi.Core.Interfaces
 {
     public interface ISequencesRepository
     {
-        Task<string> SaveSequence(Sequence sequence);
+        Task<long> SaveSequence(Sequence sequence);
     }
 }
