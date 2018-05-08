@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using Dapper;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using YogaApi.Core.Interfaces;
 using YogaApi.Core.Models;
+using YogaApi.Core.ConfigManager;
 
 namespace YogaApi.Implementations.Repositories
 {
@@ -13,9 +13,9 @@ namespace YogaApi.Implementations.Repositories
     {
         private readonly string _connectionString;
 
-        public SequencesRepository(string connectionString)
+        public SequencesRepository(IConfigManager configManager)
         {
-            _connectionString = connectionString;
+            _connectionString = configManager.GetConfigValue("ConnYoga");
         }
 
         public async Task<long> SaveSequenceData(Sequence sequence)
