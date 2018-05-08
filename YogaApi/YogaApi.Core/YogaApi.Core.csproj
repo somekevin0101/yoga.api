@@ -45,6 +45,7 @@
     <Compile Include="Models\ApiResponse.cs" />
     <Compile Include="Models\PoseOrder.cs" />
     <Compile Include="Models\Sequence.cs" />
+    <Compile Include="Models\SequencePoses.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

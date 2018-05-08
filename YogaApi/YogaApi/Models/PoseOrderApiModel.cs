@@ -9,7 +9,7 @@ namespace YogaApi.Models
         public int DurationInSeconds { get; set; }
         public int OrderInSequence { get; set; }
         public bool IsMiniSequence { get; set; }
-        List<MiniPoseOrderApiModel> MiniSequence { get; set; }
+        public List<MiniPoseOrderApiModel> MiniSequence { get; set; }
     }
 
     public class MiniPoseOrderApiModel
