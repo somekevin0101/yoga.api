@@ -64,7 +64,7 @@ namespace YogaApi.Services.LevelOne
                     foreach(MiniPose pose in model.MiniSequence)
                     {
                         var sequencePose = poseSequenceIds.Single(r => r.OrderInSequence == model.OrderInSequence);
-                        miniSequenceTasks.Add(_sequencesRepository.SaveMiniSequence(sequencePose.SequencePosesId, pose));
+                        miniSequenceTasks.Add(_sequencesRepository.SaveMiniSequencePose(sequencePose.SequencePosesId, pose));
                     }
                 }
             }

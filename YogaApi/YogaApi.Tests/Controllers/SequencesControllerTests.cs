@@ -35,7 +35,7 @@ namespace YogaApi.Tests.Controllers
         {
             var result = await _sut.SaveSequence(It.IsAny<SequencePostModel>());
 
-            Assert.IsInstanceOf<OkNegotiatedContentResult<ApiResponse<string>>>(result);
+            Assert.IsInstanceOf<OkNegotiatedContentResult<ApiResponse<long>>>(result);
         }
     }
 }

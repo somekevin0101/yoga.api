@@ -59,7 +59,7 @@ namespace YogaApi.Implementations.Repositories
             };
         }
 
-        public async Task SaveMiniSequence(long poseSequenceId, MiniPose pose)
+        public async Task SaveMiniSequencePose(long poseSequenceId, MiniPose pose)
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {

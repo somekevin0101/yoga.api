@@ -9,6 +9,6 @@ namespace YogaApi.Core.Interfaces
     {
         Task<long> SaveSequenceData(Sequence sequence);
         Task<SequencePoses> SavePoseData(long sequenceId, PoseOrder pose);
-        Task SaveMiniSequence(long poseSequenceIds, MiniPose pose);
+        Task SaveMiniSequencePose(long poseSequenceIds, MiniPose pose);
     }
 }
