@@ -43,9 +43,13 @@
   <ItemGroup>
     <Compile Include="ConfigManager\ConfigManager.cs" />
     <Compile Include="ConfigManager\IConfigManager.cs" />
+    <Compile Include="Enums\Difficulty.cs" />
+    <Compile Include="Enums\FatigueModifer.cs" />
+    <Compile Include="Enums\PoseName.cs" />
     <Compile Include="Interfaces\ISequencesRepository.cs" />
     <Compile Include="Models\ApiException.cs" />
     <Compile Include="Models\ApiResponse.cs" />
+    <Compile Include="Models\Pose.cs" />
     <Compile Include="Models\PoseOrder.cs" />
     <Compile Include="Models\Sequence.cs" />
     <Compile Include="Models\SequencePoses.cs" />
