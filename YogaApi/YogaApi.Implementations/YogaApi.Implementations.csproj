@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\SequencesRepository.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YogaApi.Core\YogaApi.Core.csproj">

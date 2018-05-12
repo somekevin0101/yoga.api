@@ -8,6 +8,8 @@ namespace YogaApi.Core.Models
         public PoseName PoseName { get; set; }
         public Difficulty Difficulty { get; set; }
         public FatigueModifer FatigueModifer { get; set; }
+        public string SanskritName { get; set; }
+        public bool IsMiniSequence { get; set; }
         public bool IsStanding { get; set; }
         public bool IsCrouched { get; set; }
         public bool IsSeated { get; set; }
@@ -24,7 +26,7 @@ namespace YogaApi.Core.Models
         public bool IsUpperBodyStrengthener { get; set; }
         public bool IsForwardFold { get; set; }
         public bool IsBackBend { get; set; }
-        public bool IsResing { get; set; }
+        public bool IsResting { get; set; }
         public bool IsBeginningPose { get; set; }
         public bool IsPenultimatePose { get; set; }
         public bool IsFirstThird { get; set; }

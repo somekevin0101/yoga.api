@@ -47,12 +47,15 @@
     <Compile Include="Enums\FatigueModifer.cs" />
     <Compile Include="Enums\PoseName.cs" />
     <Compile Include="Interfaces\ISequencesRepository.cs" />
+    <Compile Include="Interfaces\IUsersRepository.cs" />
     <Compile Include="Models\ApiException.cs" />
     <Compile Include="Models\ApiResponse.cs" />
     <Compile Include="Models\Pose.cs" />
     <Compile Include="Models\PoseOrder.cs" />
     <Compile Include="Models\Sequence.cs" />
     <Compile Include="Models\SequencePoses.cs" />
+    <Compile Include="Models\ShallowSequence.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
