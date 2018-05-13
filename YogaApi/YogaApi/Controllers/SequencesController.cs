@@ -15,7 +15,6 @@ namespace YogaApi.Controllers
             _sequencesService = sequencesService;
         }
 
-        [AllowAnonymous]
         [HttpPost]
         [Route("yogaapi/api/v1/sequences")]
         public async Task<IHttpActionResult> SaveSequence(SequencePostModel model)

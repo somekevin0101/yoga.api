@@ -18,7 +18,6 @@ namespace YogaApi.Controllers
             _usersService = usersService;
         }
 
-        [AllowAnonymous]
         [HttpGet]
         [Route("yogaapi/api/v1/users/{userId}")]
         public async Task<IHttpActionResult> GetUser(int userId)
@@ -28,7 +27,6 @@ namespace YogaApi.Controllers
             return Ok(response);
         }
 
-        [AllowAnonymous]
         [HttpPost]
         [Route("yogaapi/api/v1/users")]
         public async Task<IHttpActionResult> CreateUser(UserPostModel user)
@@ -37,7 +35,6 @@ namespace YogaApi.Controllers
             return Ok(response);
         }
 
-        [AllowAnonymous]
         [HttpGet]
         [Route("yogaapi/api/v1/users/{userId}/sequences")]
         public async Task<IHttpActionResult> GetShallowSequences(int userId)
