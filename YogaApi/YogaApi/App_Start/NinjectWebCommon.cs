@@ -11,6 +11,8 @@ namespace YogaApi.App_Start
     using Ninject.Extensions.Conventions;
     using YogaApi.Core.Interfaces;
     using YogaApi.Implementations.Repositories;
+    using System.Web.Http.Description;
+    using YogaApi.Areas.HelpPage;
 
     public static class NinjectWebCommon 
     {
@@ -80,6 +82,7 @@ namespace YogaApi.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IDocumentationProvider>().To<XmlDocumentationProvider>();
             kernel.Bind<ISequencesRepository>().To<SequencesRepository>();
             kernel.Bind<IUsersRepository>().To<UsersRepository>();
         }        
