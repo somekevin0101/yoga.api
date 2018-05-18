@@ -46,14 +46,14 @@
     <Compile Include="Enums\Difficulty.cs" />
     <Compile Include="Enums\FatigueModifer.cs" />
     <Compile Include="Enums\PoseName.cs" />
-    <Compile Include="Interfaces\ISequencesRepository.cs" />
-    <Compile Include="Interfaces\IUsersRepository.cs" />
+    <Compile Include="Interfaces\ISequenceRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Models\ApiException.cs" />
     <Compile Include="Models\ApiResponse.cs" />
     <Compile Include="Models\Pose.cs" />
     <Compile Include="Models\PoseOrder.cs" />
     <Compile Include="Models\Sequence.cs" />
-    <Compile Include="Models\SequencePoses.cs" />
+    <Compile Include="Models\SequencePose.cs" />
     <Compile Include="Models\ShallowSequence.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

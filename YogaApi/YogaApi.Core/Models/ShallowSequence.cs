@@ -7,5 +7,6 @@ namespace YogaApi.Core.Models
         public long SequenceId { get; set; }
         public string SequenceName { get; set; }
         public string SequenceStyle { get; set; }
+        public bool IsCustomMiniSequence { get; set; }
     }
 }

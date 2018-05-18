@@ -10,7 +10,8 @@ namespace YogaApi.Models
         public int UserId { get; set; }
         public string SequenceName { get; set; }
         public string SequenceStyle { get; set; }
+        public bool IsCustomMiniSequence { get; set; }
         [Required]
-        public List<PoseOrderApiModel> Poses { get; set; }
+        public List<PoseOrderPostModel> Poses { get; set; }
     }
 }

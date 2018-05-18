@@ -16,14 +16,14 @@ namespace YogaApi.Tests.Controllers
     [TestFixture]
     public class UsersControllerTests
     {
-        private Mock<IUsersService> _usersServiceMock;
+        private Mock<IUserService> _usersServiceMock;
         private Fixture _fixure;
         private UsersController _sut;
 
         [SetUp]
         public void SetUp()
         {
-            _usersServiceMock = new Mock<IUsersService>();
+            _usersServiceMock = new Mock<IUserService>();
             _fixure = new Fixture();
             _sut = new UsersController(_usersServiceMock.Object);
         }

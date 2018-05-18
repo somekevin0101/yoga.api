@@ -35,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\YogaApi.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -211,17 +212,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ApplicationDetails.cs" />
-    <Compile Include="Interfaces\ISequencesService.cs" />
-    <Compile Include="Interfaces\IUsersService.cs" />
+    <Compile Include="Interfaces\ISequenceService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Maps\SequenceMaps.cs" />
     <Compile Include="Maps\UserMaps.cs" />
-    <Compile Include="Models\PoseOrderApiModel.cs" />
+    <Compile Include="Models\PoseOrderGetModel.cs" />
+    <Compile Include="Models\PoseOrderPostModel.cs" />
+    <Compile Include="Models\SequencePosesGetModel.cs" />
     <Compile Include="Models\SequenceGetModel.cs" />
     <Compile Include="Models\SequencePostModel.cs" />
     <Compile Include="Models\UserGetModel.cs" />
     <Compile Include="Models\UserPostModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\LevelOne\SequencesService.cs" />
-    <Compile Include="Services\LevelOne\UsersService.cs" />
+    <Compile Include="Services\LevelOne\SequenceService.cs" />
+    <Compile Include="Services\LevelOne\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

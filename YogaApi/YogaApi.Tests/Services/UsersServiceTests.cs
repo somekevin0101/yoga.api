@@ -15,18 +15,18 @@ namespace YogaApi.Tests.Services
     [TestFixture]
     public class UsersServiceTests
     {
-        private Mock<IUsersRepository> _usersRepositoryMock;
+        private Mock<IUserRepository> _usersRepositoryMock;
         private Mock<IMapper> _mapperMock;
         private Fixture _fixture;
-        private UsersService _sut;
+        private UserService _sut;
 
         [SetUp]
         public void SetUp()
         {
-            _usersRepositoryMock = new Mock<IUsersRepository>();
+            _usersRepositoryMock = new Mock<IUserRepository>();
             _mapperMock = new Mock<IMapper>();
             _fixture = new Fixture();
-            _sut = new UsersService(_usersRepositoryMock.Object, _mapperMock.Object);
+            _sut = new UserService(_usersRepositoryMock.Object, _mapperMock.Object);
         }
 
         [Test]

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using YogaApi.Core.Interfaces;
 using YogaApi.Core.Models;
 using YogaApi.Core.ConfigManager;
+using System.Collections.Generic;
 
 namespace YogaApi.Implementations.Repositories
 {
-    public class SequencesRepository : ISequencesRepository
+    public class SequenceRepository : ISequenceRepository
     {
         private readonly string _connectionString;
 
-        public SequencesRepository(IConfigManager configManager)
+        public SequenceRepository(IConfigManager configManager)
         {
             _connectionString = configManager.GetConfigValue("ConnYoga");
         }
@@ -26,14 +27,15 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@SequenceName", sequence.SequenceName);
                 parameters.Add("@SequenceStyle", sequence.SequenceStyle);
                 parameters.Add("@UserId", sequence.UserId);
+                parameters.Add("@IsCustomMiniSequence", sequence.IsCustomMiniSequence);
 
                 return await db.ExecuteScalarAsync<long>
-                    ("Insert into dbo.Sequences values(@SequenceName, @SequenceStyle, @UserId) select @@Identity",
+                    ("Insert into dbo.Sequences values(@SequenceName, @SequenceStyle, @UserId, @IsCustomMiniSequence) select @@Identity",
                     parameters, commandType: CommandType.Text).ConfigureAwait(false);
             }
         }
 
-        public async Task<SequencePoses> SavePoseData(long sequenceId, PoseOrder pose)
+        public async Task<SequencePose> SavePoseData(long sequenceId, PoseOrder pose)
         {
             long sequencePosesId;
             using (IDbConnection db = new SqlConnection(_connectionString))
@@ -50,7 +52,7 @@ namespace YogaApi.Implementations.Repositories
                     parameters, commandType: CommandType.Text).ConfigureAwait(false);
             }
 
-            return new SequencePoses
+            return new SequencePose
             {
                 SequencePosesId = sequencePosesId,
                 PoseId = pose.PoseId,
@@ -70,7 +72,33 @@ namespace YogaApi.Implementations.Repositories
                     parameters.Add("@DurationInSeconds", pose.DurationInSeconds);
                     await db.ExecuteAsync
                         ("Insert into dbo.MiniSequencePoses values(@SequencePosesId, @PoseId, @OrderInMiniSequence, @DurationInSeconds)",
-                        parameters, commandType: CommandType.Text);
+                        parameters, commandType: CommandType.Text).ConfigureAwait(false);
+            }
+        }
+
+        public async Task<IEnumerable<SequencePose>> GetSequencePoses(long sequenceId)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@SequenceId", sequenceId);
+
+                 return await db.QueryAsync<SequencePose>
+                    ("Select * from dbo.SequencePoses where SequenceId = @SequenceId",
+                    parameters, commandType: CommandType.Text).ConfigureAwait(false);
+            }
+        }
+
+        public async Task<IEnumerable<MiniPose>> GetMiniPoses(long sequencePosesId)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@SequencePosesId", sequencePosesId);
+
+                return await db.QueryAsync<MiniPose>
+                   ("Select * from dbo.MiniSequencePoses where SequencePosesId = @SequencePosesId",
+                   parameters, commandType: CommandType.Text).ConfigureAwait(false);
             }
         }
     }

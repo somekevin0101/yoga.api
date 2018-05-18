@@ -5,7 +5,7 @@ using YogaApi.Core.Models;
 
 namespace YogaApi.Core.Interfaces
 {
-    public interface IUsersRepository
+    public interface IUserRepository
     {
         Task<int> CreateUser(User user);
         Task<User> GetUser(int userId);

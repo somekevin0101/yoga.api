@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace YogaApi.Models
 {
-    public class PoseOrderApiModel
+    public class PoseOrderPostModel
     {
         public int PoseId { get; set; }
         public int DurationInSeconds { get; set; }

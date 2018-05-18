@@ -10,11 +10,11 @@ using YogaApi.Core.Models;
 
 namespace YogaApi.Implementations.Repositories
 {
-    public class UsersRepository : IUsersRepository
+    public class UserRepository : IUserRepository
     {
         private readonly string _connectionString;
 
-        public UsersRepository(IConfigManager configManager)
+        public UserRepository(IConfigManager configManager)
         {
             _connectionString = configManager.GetConfigValue("ConnYoga");
         }
@@ -43,7 +43,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@UserId", userId);
 
                 return await db.QueryAsync<ShallowSequence>
-                    ("Select SequenceId, SequenceName, SequenceStyle From dbo.Sequences Where UserId = @UserId",
+                    ("Select SequenceId, SequenceName, SequenceStyle, IsCustomMiniSequence From dbo.Sequences Where UserId = @UserId",
                     parameters, commandType: CommandType.Text).ConfigureAwait(false);
             }
         }

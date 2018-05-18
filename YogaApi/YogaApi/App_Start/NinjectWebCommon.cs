@@ -83,8 +83,8 @@ namespace YogaApi.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IDocumentationProvider>().To<XmlDocumentationProvider>();
-            kernel.Bind<ISequencesRepository>().To<SequencesRepository>();
-            kernel.Bind<IUsersRepository>().To<UsersRepository>();
+            kernel.Bind<ISequenceRepository>().To<SequenceRepository>();
+            kernel.Bind<IUserRepository>().To<UserRepository>();
         }        
     }
 }

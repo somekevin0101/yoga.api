@@ -12,13 +12,13 @@ namespace YogaApi.Tests.Controllers
     [TestFixture]
     public class SequencesControllerTests
     {
-        private Mock<ISequencesService> _sequencesServiceMock;
+        private Mock<ISequenceService> _sequencesServiceMock;
         private SequencesController _sut;
 
         [SetUp]
         public void SetUp()
         {
-            _sequencesServiceMock = new Mock<ISequencesService>();
+            _sequencesServiceMock = new Mock<ISequenceService>();
             _sut = new SequencesController(_sequencesServiceMock.Object);
         }
 

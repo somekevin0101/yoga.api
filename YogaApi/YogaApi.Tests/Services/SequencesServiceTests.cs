@@ -16,17 +16,17 @@ namespace YogaApi.Tests.Services
     public class SequencesServiceTests
     {
         private Mock<IMapper> _mapperMock;
-        private Mock<ISequencesRepository> _sequencesRepositoryMock;
+        private Mock<ISequenceRepository> _sequencesRepositoryMock;
         private Fixture _fixture;
-        private SequencesService _sut;
+        private SequenceService _sut;
 
         [SetUp]
         public void SetUp()
         {
             _mapperMock = new Mock<IMapper>();
-            _sequencesRepositoryMock = new Mock<ISequencesRepository>();
+            _sequencesRepositoryMock = new Mock<ISequenceRepository>();
             _fixture = new Fixture();
-            _sut = new SequencesService(_sequencesRepositoryMock.Object, _mapperMock.Object);
+            _sut = new SequenceService(_sequencesRepositoryMock.Object, _mapperMock.Object);
         }
 
         [Test]
@@ -40,13 +40,13 @@ namespace YogaApi.Tests.Services
             coreModel.Poses[0].IsMiniSequence = false;
             coreModel.Poses[1].IsMiniSequence = true;
             coreModel.Poses[2].IsMiniSequence = false;
-            var sequencePoses1 = _fixture.Create<SequencePoses>();
+            var sequencePoses1 = _fixture.Create<SequencePose>();
             sequencePoses1.OrderInSequence = 1;
             sequencePoses1.IsMiniSequence = false;
-            var sequencePoses2 = _fixture.Create<SequencePoses>();
+            var sequencePoses2 = _fixture.Create<SequencePose>();
             sequencePoses2.OrderInSequence = 2;
             sequencePoses2.IsMiniSequence = true;
-            var sequencePoses3 = _fixture.Create<SequencePoses>();
+            var sequencePoses3 = _fixture.Create<SequencePose>();
             sequencePoses3.OrderInSequence = 3;
             sequencePoses3.IsMiniSequence = false;
 
@@ -72,13 +72,13 @@ namespace YogaApi.Tests.Services
             coreModel.Poses[0].IsMiniSequence = false;
             coreModel.Poses[1].IsMiniSequence = true;
             coreModel.Poses[2].IsMiniSequence = false;
-            var sequencePoses1 = _fixture.Create<SequencePoses>();
+            var sequencePoses1 = _fixture.Create<SequencePose>();
             sequencePoses1.OrderInSequence = 1;
             sequencePoses1.IsMiniSequence = false;
-            var sequencePoses2 = _fixture.Create<SequencePoses>();
+            var sequencePoses2 = _fixture.Create<SequencePose>();
             sequencePoses2.OrderInSequence = 2;
             sequencePoses2.IsMiniSequence = true;
-            var sequencePoses3 = _fixture.Create<SequencePoses>();
+            var sequencePoses3 = _fixture.Create<SequencePose>();
             sequencePoses3.OrderInSequence = 3;
             sequencePoses3.IsMiniSequence = false;
 
@@ -104,13 +104,13 @@ namespace YogaApi.Tests.Services
             coreModel.Poses[0].IsMiniSequence = false;
             coreModel.Poses[1].IsMiniSequence = true;
             coreModel.Poses[2].IsMiniSequence = false;
-            var sequencePoses1 = _fixture.Create<SequencePoses>();
+            var sequencePoses1 = _fixture.Create<SequencePose>();
             sequencePoses1.OrderInSequence = 1;
             sequencePoses1.IsMiniSequence = false;
-            var sequencePoses2 = _fixture.Create<SequencePoses>();
+            var sequencePoses2 = _fixture.Create<SequencePose>();
             sequencePoses2.OrderInSequence = 2;
             sequencePoses2.IsMiniSequence = true;
-            var sequencePoses3 = _fixture.Create<SequencePoses>();
+            var sequencePoses3 = _fixture.Create<SequencePose>();
             sequencePoses3.OrderInSequence = 3;
             sequencePoses3.IsMiniSequence = false;
 
@@ -136,13 +136,13 @@ namespace YogaApi.Tests.Services
             coreModel.Poses[0].IsMiniSequence = true;
             coreModel.Poses[1].IsMiniSequence = true;
             coreModel.Poses[2].IsMiniSequence = false;
-            var sequencePoses1 = _fixture.Create<SequencePoses>();
+            var sequencePoses1 = _fixture.Create<SequencePose>();
             sequencePoses1.OrderInSequence = 1;
             sequencePoses1.IsMiniSequence = true;
-            var sequencePoses2 = _fixture.Create<SequencePoses>();
+            var sequencePoses2 = _fixture.Create<SequencePose>();
             sequencePoses2.OrderInSequence = 2;
             sequencePoses2.IsMiniSequence = true;
-            var sequencePoses3 = _fixture.Create<SequencePoses>();
+            var sequencePoses3 = _fixture.Create<SequencePose>();
             sequencePoses3.OrderInSequence = 3;
             sequencePoses3.IsMiniSequence = false;
 
@@ -168,13 +168,13 @@ namespace YogaApi.Tests.Services
             coreModel.Poses[0].IsMiniSequence = false;
             coreModel.Poses[1].IsMiniSequence = true;
             coreModel.Poses[2].IsMiniSequence = false;
-            var sequencePoses1 = _fixture.Create<SequencePoses>();
+            var sequencePoses1 = _fixture.Create<SequencePose>();
             sequencePoses1.OrderInSequence = 1;
             sequencePoses1.IsMiniSequence = false;
-            var sequencePoses2 = _fixture.Create<SequencePoses>();
+            var sequencePoses2 = _fixture.Create<SequencePose>();
             sequencePoses2.OrderInSequence = 2;
             sequencePoses2.IsMiniSequence = true;
-            var sequencePoses3 = _fixture.Create<SequencePoses>();
+            var sequencePoses3 = _fixture.Create<SequencePose>();
             sequencePoses3.OrderInSequence = 3;
             sequencePoses3.IsMiniSequence = false;
 

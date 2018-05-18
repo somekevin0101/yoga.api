@@ -5,8 +5,9 @@ using YogaApi.Models;
 
 namespace YogaApi.Interfaces
 {
-    public interface ISequencesService
+    public interface ISequenceService
     {
         Task<ApiResponse<long>> SaveSequence(SequencePostModel model);
+        Task<ApiResponse<SequencePosesGetModel>> GetSequencePoses(long sequenceId);
     }
 }
