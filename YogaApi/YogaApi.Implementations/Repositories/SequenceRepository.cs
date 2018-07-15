@@ -30,8 +30,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@IsCustomMiniSequence", sequence.IsCustomMiniSequence);
 
                 return await db.ExecuteScalarAsync<long>
-                    ("Insert into dbo.Sequences values(@SequenceName, @SequenceStyle, @UserId, @IsCustomMiniSequence) select @@Identity",
-                    parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                    ("spSaveSequence", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
         }
 
@@ -48,8 +47,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@IsMiniSequence", pose.IsMiniSequence);
 
                 sequencePosesId = await db.ExecuteScalarAsync<long>
-                    ("Insert into dbo.SequencePoses values(@SequenceId, @PoseId, @OrderInSequence, @DurationInSeconds, @IsMiniSequence) select @@Identity",
-                    parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                    ("spSaveSequencePoses", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
 
             return new SequencePose
@@ -71,8 +69,7 @@ namespace YogaApi.Implementations.Repositories
                     parameters.Add("@OrderInMiniSequence", pose.OrderInMiniSequence);
                     parameters.Add("@DurationInSeconds", pose.DurationInSeconds);
                     await db.ExecuteAsync
-                        ("Insert into dbo.MiniSequencePoses values(@SequencePosesId, @PoseId, @OrderInMiniSequence, @DurationInSeconds)",
-                        parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                        ("spSaveMiniSequencePoses", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
         }
 
@@ -84,8 +81,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@SequenceId", sequenceId);
 
                  return await db.QueryAsync<SequencePose>
-                    ("Select * from dbo.SequencePoses where SequenceId = @SequenceId",
-                    parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                    ("spGetSequencePoses", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
         }
 
@@ -97,8 +93,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@SequencePosesId", sequencePosesId);
 
                 return await db.QueryAsync<MiniPose>
-                   ("Select * from dbo.MiniSequencePoses where SequencePosesId = @SequencePosesId",
-                   parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                   ("spGetMiniSequencePoses", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
         }
     }

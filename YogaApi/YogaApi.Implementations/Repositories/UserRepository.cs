@@ -30,8 +30,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@ZipCode", user.ZipCode);
 
                 return await db.ExecuteScalarAsync<int>
-                    ("Insert into dbo.Users values(@EmailAddress, @FirstName, @LastName, @ZipCode) select @@Identity",
-                    parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                    ("spCreateUser", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
         }
 
@@ -43,8 +42,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@UserId", userId);
 
                 return await db.QueryAsync<ShallowSequence>
-                    ("Select SequenceId, SequenceName, SequenceStyle, IsCustomMiniSequence From dbo.Sequences Where UserId = @UserId",
-                    parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                    ("spGetUserSequences", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
         }
 
@@ -56,8 +54,7 @@ namespace YogaApi.Implementations.Repositories
                 parameters.Add("@UserId", userId);
 
                 return await db.QuerySingleOrDefaultAsync<User>
-                    ("Select * from dbo.Users Where UserId = @UserId",
-                    parameters, commandType: CommandType.Text).ConfigureAwait(false);
+                    ("spGetUser", parameters, commandType: CommandType.StoredProcedure).ConfigureAwait(false);
             }
         }
     }
