@@ -226,7 +226,7 @@
     <Compile Include="Models\UserPostModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LevelOne\SequenceService.cs" />
-    <Compile Include="Services\LevelOne\SomeOtherUserService.cs" />
+    <Compile Include="Services\LevelOne\SuperUserService.cs" />
     <Compile Include="Services\LevelOne\UserService.cs" />
   </ItemGroup>
   <ItemGroup>

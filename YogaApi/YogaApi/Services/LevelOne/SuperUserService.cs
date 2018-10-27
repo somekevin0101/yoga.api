@@ -9,7 +9,7 @@ using YogaApi.Models;
 
 namespace YogaApi.Services.LevelOne
 {
-    public class SomeOtherUserService : IUserService
+    public class SuperUserService : IUserService
     {
         public Task<ApiResponse<int>> CreateUser(UserPostModel user)
         {

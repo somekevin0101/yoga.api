@@ -17,13 +17,12 @@ namespace YogaApi.Controllers
             bool success = Enum.TryParse(type, true, out UserType userType);
             if (!success) throw new ArgumentException("Invalid User Type");
 
-            IUserService service;
             switch (userType)
             {
                 case UserType.Regular:
                     return userServices.OfType<UserService>().First();
                 case UserType.Super:
-                    return userServices.OfType<SomeOtherUserService>().First();
+                    return userServices.OfType<SuperUserService>().First();
                 default: throw new ArgumentException("Invalid User Type");
             }
         }
