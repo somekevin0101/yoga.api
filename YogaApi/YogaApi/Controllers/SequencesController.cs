@@ -10,7 +10,7 @@ using YogaApi.Models;
 
 namespace YogaApi.Controllers
 {
-    public class SequencesController : ApiController
+    public class SequencesController : YogaApiController
     {
         private readonly ISequenceService _sequenceService;
 

@@ -1,6 +1,7 @@
 ﻿using Swashbuckle.Swagger.Annotations;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -10,13 +11,13 @@ using YogaApi.Models;
 
 namespace YogaApi.Controllers
 {
-    public class UsersController : ApiController
+    public class UsersController : YogaApiController
     {
         private readonly IUserService _userService;
 
-        public UsersController(IUserService userService)
+        public UsersController(IEnumerable<IUserService> userServices)
         {
-            _userService = userService;
+            _userService = GetUserService(userServices);
         }
         /// <summary>
         /// Gets user information by user id

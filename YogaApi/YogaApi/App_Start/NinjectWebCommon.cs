@@ -85,6 +85,7 @@ namespace YogaApi.App_Start
             kernel.Bind<IDocumentationProvider>().To<XmlDocumentationProvider>();
             kernel.Bind<ISequenceRepository>().To<SequenceRepository>();
             kernel.Bind<IUserRepository>().To<UserRepository>();
+
         }        
     }
 }
